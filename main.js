@@ -22,68 +22,74 @@ function collectItem() {
 
     // Simulate results for based on racer position
     if (position >= 1 && position <= 6) {
-        // Banana 45%, Green Shell 35%, Star 15%, Golden Mushroom 4%, Bullet Bill 1%
-
-        // Generate a random number
-        let randNum = Math.random(); // Random decimal from 0 up to 1
-        
-        if (randNum < 0.45) {
-            // Banana
-            numBanana++;
-            document.getElementById('banana').innerHTML = numBanana;
-            resultsEl.innerHTML += '<img src="images/banana.jpg">';
-        } else if (randNum < 0.8) {
-            // Green Shell
-            numGreenShell++;
-            document.getElementById('green-shell').innerHTML = numGreenShell;
-            resultsEl.innerHTML += '<img src="images/greenshell.jpg">';
-        } else if (randNum < 0.95) {
-            // Star
-            numStar++;
-            document.getElementById('star').innerHTML = numStar;
-            resultsEl.innerHTML += '<img src="images/star.jpg">';
-        } else if (randNum < 0.99) {
-            // Golden Mushroom
-            numGoldenMushroom++;
-            document.getElementById('golden-mushroom').innerHTML = numGoldenMushroom;
-            resultsEl.innerHTML += '<img src="images/goldenmushroom.jpg">';
-        } else {
-            // Bullet Bill
-            numBulletBill++;
-            document.getElementById('bullet-bill').innerHTML = numBulletBill;
-            resultsEl.innerHTML += '<img src="images/bulletbill.jpg">';
-        }
+        simulate(.45,.8,.95,.99);
     } else if (position >= 7 && position <= 12) {
-        // Banana 5%, Green Shell 5%, Star 25%, Golden Mushroom 35%, Bullet Bill 30%
+        simulate(.05,.1,.35,.7);
+    }
+}
 
-        // Generate a random number
-        let randNum = Math.random(); // Random decimal from 0 up to 1
-        
-        if (randNum < 0.05) {
-            // Banana
-            numBanana++;
-            document.getElementById('banana').innerHTML = numBanana;
-            resultsEl.innerHTML += '<img src="images/banana.jpg">';
-        } else if (randNum < 0.1) {
-            // Green Shell
-            numGreenShell++;
-            document.getElementById('green-shell').innerHTML = numGreenShell;
-            resultsEl.innerHTML += '<img src="images/greenshell.jpg">';
-        } else if (randNum < 0.35) {
-            // Star
-            numStar++;
-            document.getElementById('star').innerHTML = numStar;
-            resultsEl.innerHTML += '<img src="images/star.jpg">';
-        } else if (randNum < 0.7) {
-            // Golden Mushroom
-            numGoldenMushroom++;
-            document.getElementById('golden-mushroom').innerHTML = numGoldenMushroom;
-            resultsEl.innerHTML += '<img src="images/goldenmushroom.jpg">';
-        } else {
-            // Bullet Bill
-            numBulletBill++;
-            document.getElementById('bullet-bill').innerHTML = numBulletBill;
-            resultsEl.innerHTML += '<img src="images/bulletbill.jpg">';
-        }
+// helper functions
+
+function simulate(bananaChance, greenShellChance, starChance, goldenMushroomChance) {
+    // Generate a random number
+    let randNum = Math.random(); // Random decimal from 0 up to 1
+
+    if (randNum < bananaChance) {
+        // Banana
+        numBanana++;
+        document.getElementById('banana').innerHTML = numBanana;
+        resultsEl.innerHTML += '<img src="images/banana.jpg">';
+    } else if (randNum < greenShellChance) {
+        // Green Shell
+        numGreenShell++;
+        document.getElementById('green-shell').innerHTML = numGreenShell;
+        resultsEl.innerHTML += '<img src="images/greenshell.jpg">';
+    } else if (randNum < starChance) {
+        // Star
+        numStar++;
+        document.getElementById('star').innerHTML = numStar;
+        resultsEl.innerHTML += '<img src="images/star.jpg">';
+    } else if (randNum < goldenMushroomChance) {
+        // Golden Mushroom
+        numGoldenMushroom++;
+        document.getElementById('golden-mushroom').innerHTML = numGoldenMushroom;
+        resultsEl.innerHTML += '<img src="images/goldenmushroom.jpg">';
+    } else {
+        // Bullet Bill
+        numBulletBill++;
+        document.getElementById('bullet-bill').innerHTML = numBulletBill;
+        resultsEl.innerHTML += '<img src="images/bulletbill.jpg">';
+    }
+}
+
+function simulate7to12() {
+    // Generate a random number
+    let randNum = Math.random(); // Random decimal from 0 up to 1
+
+    if (randNum < 0.05) {
+        // Banana
+        numBanana++;
+        document.getElementById('banana').innerHTML = numBanana;
+        resultsEl.innerHTML += '<img src="images/banana.jpg">';
+    } else if (randNum < 0.1) {
+        // Green Shell
+        numGreenShell++;
+        document.getElementById('green-shell').innerHTML = numGreenShell;
+        resultsEl.innerHTML += '<img src="images/greenshell.jpg">';
+    } else if (randNum < 0.35) {
+        // Star
+        numStar++;
+        document.getElementById('star').innerHTML = numStar;
+        resultsEl.innerHTML += '<img src="images/star.jpg">';
+    } else if (randNum < 0.7) {
+        // Golden Mushroom
+        numGoldenMushroom++;
+        document.getElementById('golden-mushroom').innerHTML = numGoldenMushroom;
+        resultsEl.innerHTML += '<img src="images/goldenmushroom.jpg">';
+    } else {
+        // Bullet Bill
+        numBulletBill++;
+        document.getElementById('bullet-bill').innerHTML = numBulletBill;
+        resultsEl.innerHTML += '<img src="images/bulletbill.jpg">';
     }
 }
